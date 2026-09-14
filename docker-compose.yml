@@ -1,0 +1,35 @@
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: securevault-mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: shravya123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    image: securevault-backend:latest
+    container_name: securevault-backend
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: shravya123
+    ports:
+      - "8080:8080"
+
+  frontend:
+    image: securevault-frontend:latest
+    container_name: securevault-frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  mysql_data:

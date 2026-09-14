@@ -1,0 +1,11 @@
+.env
+
+node_modules/
+target/
+
+.vscode/
+.vscode.zip
+
+apache-maven-3.9.14/
+
+*.log
