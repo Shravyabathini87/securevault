@@ -41,7 +41,7 @@ function Vault() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:8080/api/credentials",
+        "https://securevault-osrq.onrender.com/api/credentials",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -74,7 +74,7 @@ function Vault() {
     try {
 
       const response = await axios.get(
-        "http://localhost:8080/api/password/generate?length=16"
+        "https://securevault-osrq.onrender.com/api/password/generate?length=16"
       );
 
       setPassword(response.data.password);
@@ -98,7 +98,7 @@ function Vault() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:8080/api/credentials",
+        "https://securevault-osrq.onrender.com/api/credentials",
         {
           website,
           username,
@@ -151,7 +151,7 @@ function Vault() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:8080/api/credentials/${editingId}`,
+        `https://securevault-osrq.onrender.com/api/credentials/${editingId}`,
         {
           website,
           username,
@@ -200,7 +200,7 @@ function Vault() {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `http://localhost:8080/api/credentials/${id}`,
+        `https://securevault-osrq.onrender.com/api/credentials/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -231,7 +231,7 @@ function Vault() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:8080/api/credentials/${id}/favorite`,
+        `https://securevault-osrq.onrender.com/api/credentials/${id}/favorite`,
         {},
         {
           headers: {
@@ -363,7 +363,7 @@ function Vault() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:8080/api/sharing/share",
+        "https://securevault-osrq.onrender.com/api/sharing/share",
         {
           credentialId: shareCredentialId,
           recipientEmail: recipientEmail,

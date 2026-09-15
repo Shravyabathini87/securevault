@@ -19,7 +19,7 @@ function LoginHistory() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:8080/api/login-history",
+        "https://securevault-osrq.onrender.com/api/login-history",
         {
           headers: {
             Authorization: `Bearer ${token}`,

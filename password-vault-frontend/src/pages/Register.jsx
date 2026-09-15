@@ -40,7 +40,7 @@ function Register() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/auth/register",
+        "https://securevault-osrq.onrender.com/api/auth/register",
         {
           name: user.name,
           email: user.email,

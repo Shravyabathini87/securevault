@@ -20,7 +20,7 @@ function VerifyOTP() {
     try {
 
       const response = await axios.post(
-        "http://localhost:8080/api/auth/verify-otp",
+        "https://securevault-osrq.onrender.com/api/auth/verify-otp",
         {
           email,
           otp,

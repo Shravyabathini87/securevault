@@ -32,7 +32,7 @@ function AddCredential() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:8080/api/password/generate?length=16",
+        "https://securevault-osrq.onrender.com/api/password/generate?length=16",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ function AddCredential() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:8080/api/credentials",
+        "https://securevault-osrq.onrender.com/api/credentials",
         {
           website: formData.website,
           username: formData.username,

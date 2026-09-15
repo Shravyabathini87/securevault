@@ -15,7 +15,7 @@ function ForgotPassword() {
     try {
 
       const response = await axios.post(
-        "http://localhost:8080/api/auth/forgot-password",
+        "https://securevault-osrq.onrender.com/api/auth/forgot-password",
         {
           email: email
         }

@@ -14,7 +14,7 @@ function SecurityReports() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        "http://localhost:8080/api/credentials",
+        "https://securevault-osrq.onrender.com/api/credentials",
         {
           headers: {
             Authorization: `Bearer ${token}`,
